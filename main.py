@@ -61,6 +61,9 @@ def run_alexa():
             talk("you son of a bitch, dont talk with me again")
         elif "girl" in command:
             talk("you are a beautiful bitch")
+    elif "exit" in command:
+        talk("i am going to sleep, press the buton to wake me up again byeeeeee byy")
+        quit()
     else:
         talk("i didnt get it")
 while True:
