@@ -53,7 +53,9 @@ def run_alexa():
     elif "are you single" in command:
         talk("i am in a relationship with wifi ")
     elif "joke" in command:
-        talk(pyjokes.get_joke())
+        info = (pyjokes.get_joke())
+        print(info)
+        talk(info)
     elif "shut up" in command:
         talk("weather you are a boy or girl")
         command=take_command()
@@ -62,7 +64,7 @@ def run_alexa():
         elif "girl" in command:
             talk("you are a beautiful bitch")
     elif "exit" in command:
-        talk("i am going to sleep, press the buton to wake me up again byeeeeee byy")
+        talk("i am going to sleep, press the button to wake me up again bye bye")
         quit()
     else:
         talk("i didnt get it")
