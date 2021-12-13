@@ -38,6 +38,11 @@ def run_alexa():
         time = datetime.datetime.now().strftime("%I:%M %p ")
         print(time)
         talk("current time is" + time)
+    elif "day" in command:
+        now=datetime.datetime.now()
+        weekday=now.strftime("%A")
+        print(weekday)
+        talk("today is"+weekday)
     elif "what is" in command:
         person = command.replace("what is", "")
         info = wikipedia.summary(person, 2)
