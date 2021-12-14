@@ -4,6 +4,7 @@ import pywhatkit
 import datetime
 import wikipedia
 import pyjokes
+import requests
 listner =sr.Recognizer()
 engine=pyttsx3.init()
 voices=engine.getProperty("voices") # to change voice to female
@@ -57,6 +58,11 @@ def run_alexa():
         talk("sorry i am having a headache")
     elif "are you single" in command:
         talk("i am in a relationship with wifi ")
+    elif "headline" in command:
+        responce = requests.get(f"https://newsapi.org/v2/everything?q=tesla&from=2021-11-13&sortBy=publishedAt&apiKey=097575c06ecd4bc4b550fae79a2bd131")
+        print(type(responce.json()))
+        print(responce.json())
+        talk(responce.json())
     elif "joke" in command:
         info = (pyjokes.get_joke())
         print(info)
